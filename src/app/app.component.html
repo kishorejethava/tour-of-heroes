@@ -1,7 +1,19 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/heroes">Heroes</a>
-  </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<header>
+  <div>
+    <a href="#" class="logo">Tour of Heroes</a>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="/dashboard">Dashboard</a></li>
+        <li><a href="#" routerLink="/heroes">Heroes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- <div style="margin: auto; width: fit-content;">
+        <app-hero-search></app-hero-search>
+      </div> -->
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+</div>

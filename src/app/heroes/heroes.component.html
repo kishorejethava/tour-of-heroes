@@ -10,19 +10,29 @@
 </div> -->
 <div>
   <h2>My Heroes</h2>
-  <ul class="heroes">
-    <li *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{ hero.id }}">
+
+  <ul mat-nav-list class="heroes">
+    <li mat-list-item *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
+      <a>
         <span class="badge">{{ hero.id }}</span> {{ hero.name }}
       </a>
-      <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+      <button
+        mat-icon-button
+        class="delete item"
+        title="delete hero"
+        (click)="delete(hero)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
     </li>
   </ul>
-</div>
-
-<div>
-  <label> Hero name: <input #heroName /> </label>
-  <button (click)="add(heroName.value); heroName.value = ''">
-    add
+  <button
+    mat-fab
+    color="accent"
+    id="add-button"
+    matTooltip="Add Heroes"
+    (click)="openDialog()"
+  >
+    <i class="material-icons">group_add</i>
   </button>
 </div>

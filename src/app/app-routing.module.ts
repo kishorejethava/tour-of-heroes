@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)
+    /* RouterModule.forChild([
+      { path: '', component: AppComponent, children: [
+        { path: '', redirectTo: '/dashboard' },
+        { path: 'dashboard', component: DashboardComponent, data: { label: 'Dashboard' } },
+        { path: 'heroes', component: HeroesComponent, data: { label: 'Heroes' } }
+      ] }
+    ]) */],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
